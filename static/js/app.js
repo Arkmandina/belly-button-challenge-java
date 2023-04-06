@@ -72,6 +72,8 @@ function buildMetadata(sample){
             PANEL.append("h6").text(`${key.toUpperCase()}: ${result[key]}`)
         }
 
+        // BONUS
+        buildGauge(result.wfreq);
 
     })
 }
@@ -91,6 +93,9 @@ function init(){
     buildMetadata(firstSample);})
 };
 
-
+function optionChanged(newSample){
+    buildCharts(newSample);
+    buildMetadata(newSample)
+}
     
 init();
